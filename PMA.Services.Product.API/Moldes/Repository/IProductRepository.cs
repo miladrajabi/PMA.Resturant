@@ -1,0 +1,37 @@
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using PMA.Services.Product.API.DbContexts;
+using PMA.Services.Product.API.Moldes.Dto;
+
+namespace PMA.Services.Product.API.Moldes.Repository
+{
+    public interface IProductRepository
+    {
+        Task<ProductDto> GetByIdAsync(int id);
+        Task<IEnumerable<ProductDto>> GetAsync();
+    }
+
+    public class ProductRepository : IProductRepository
+    {
+        private readonly ApplicationDbContext _dbContext;
+        private readonly IMapper _mapper;
+
+        public ProductRepository(ApplicationDbContext dbContext, IMapper mapper)
+        {
+            _dbContext = dbContext;
+            _mapper = mapper;
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetAsync()
+        {
+            var products = await _dbContext.Products.ToListAsync();
+            return _mapper.Map<List<ProductDto>>(products);
+        }
+
+        public async Task<ProductDto> GetByIdAsync(int id)
+        {
+            var product = await _dbContext.Products.FirstOrDefaultAsync(x => x.Id == id);
+            return _mapper.Map<ProductDto>(product);
+        }
+    }
+}
