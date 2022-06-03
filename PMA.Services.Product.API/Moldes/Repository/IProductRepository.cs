@@ -10,7 +10,9 @@ namespace PMA.Services.Product.API.Moldes.Repository
         Task<ProductDto> GetByIdAsync(int id);
         Task<IEnumerable<ProductDto>> GetAsync();
         Task<bool> DeleteProduct(int id);
-        Task<ProductDto> CreateOrUpdate(ProductDto dto);
+        Task<ProductDto> Create(ProductDto dto);
+        Task<ProductDto> Update(int id, ProductDto dto);
+
     }
 
     public class ProductRepository : IProductRepository
@@ -24,13 +26,15 @@ namespace PMA.Services.Product.API.Moldes.Repository
             _mapper = mapper;
         }
 
-        public async Task<ProductDto> CreateOrUpdate(ProductDto dto)
+        public async Task<ProductDto> Create(ProductDto dto)
         {
             var product = _mapper.Map<ProductDto, Product>(dto);
-            _ = product.Id > 0 ? _dbContext.Products.Update(product) : await _dbContext.Products.AddAsync(product);
+            product.CreationDate = DateTime.Now;
+            await _dbContext.Products.AddAsync(product);
             await _dbContext.SaveChangesAsync();
             return _mapper.Map<Product, ProductDto>(product);
         }
+
 
         public async Task<bool> DeleteProduct(int id)
         {
@@ -60,6 +64,16 @@ namespace PMA.Services.Product.API.Moldes.Repository
         {
             var product = await _dbContext.Products.FirstOrDefaultAsync(x => x.Id == id);
             return _mapper.Map<ProductDto>(product);
+        }
+
+        public async Task<ProductDto> Update(int id, ProductDto dto)
+        {
+            var product = _mapper.Map<ProductDto, Product>(dto);
+            product.Id = id;
+            product.MidifyDate = DateTime.Now;
+            _dbContext.Products.Update(product);
+            await _dbContext.SaveChangesAsync();
+            return _mapper.Map<Product, ProductDto>(product);
         }
     }
 }

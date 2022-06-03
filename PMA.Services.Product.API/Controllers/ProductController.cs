@@ -18,8 +18,8 @@ namespace PMA.Services.Product.API.Controllers
             _productRepository = productRepository;
         }
 
-        [HttpGet("get")]
-        public async Task<object> GetAsync()
+        [HttpGet]
+        public async Task<object> Get()
         {
             try
             {
@@ -35,12 +35,63 @@ namespace PMA.Services.Product.API.Controllers
         }
 
         [HttpGet]
-        [Route("get/{id}")]
-        public async Task<object> GetAsync(int id)
+        [Route("{id}")]
+        public async Task<object> Get(int id)
         {
             try
             {
                 var result = await _productRepository.GetByIdAsync(id);
+                _responseDto.Result = result;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.IsSuccess = false;
+                _responseDto.ErrorMessage = new List<string> { ex.Message };
+            }
+            return _responseDto;
+        }
+
+        [HttpPost]
+        public async Task<object> Post([FromBody] ProductDto productDto)
+        {
+            try
+            {
+                var result = await _productRepository.Create(productDto);
+                _responseDto.Result = result;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.IsSuccess = false;
+                _responseDto.ErrorMessage = new List<string> { ex.Message };
+            }
+            return _responseDto;
+        }
+
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<object> Put(int id, [FromBody] ProductDto productDto)
+        {
+            try
+            {
+                var result = await _productRepository.Update(id, productDto);
+                _responseDto.Result = result;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.IsSuccess = false;
+                _responseDto.ErrorMessage = new List<string> { ex.Message };
+            }
+            return _responseDto;
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<object> Delete(int id)
+        {
+            try
+            {
+                var result = await _productRepository.DeleteProduct(id);
                 _responseDto.Result = result;
             }
             catch (Exception ex)
