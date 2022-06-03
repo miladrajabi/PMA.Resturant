@@ -10,8 +10,8 @@ namespace PMA.Services.Product.API
             var mappingConfig = new MapperConfiguration(
                 config =>
                 {
-                    config.CreateMap<ProductDto, PMA.Services.Product.API.Moldes.Product>();
-                    config.CreateMap<PMA.Services.Product.API.Moldes.Product, ProductDto>();
+                    config.CreateMap<ProductDto, Moldes.Product>();
+                    config.CreateMap<Moldes.Product, ProductDto>();
                 });
             return mappingConfig;
         }

@@ -8,5 +8,6 @@ namespace PMA.Services.Product.API.Moldes
         public int Id { get; set; }
 
         public DateTime CreationDate { get; set; }
+        public DateTime? MidifyDate { get; set; }
     }
 }

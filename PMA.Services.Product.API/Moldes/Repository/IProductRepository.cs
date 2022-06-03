@@ -9,6 +9,8 @@ namespace PMA.Services.Product.API.Moldes.Repository
     {
         Task<ProductDto> GetByIdAsync(int id);
         Task<IEnumerable<ProductDto>> GetAsync();
+        Task<bool> DeleteProduct(int id);
+        Task<ProductDto> CreateOrUpdate(ProductDto dto);
     }
 
     public class ProductRepository : IProductRepository
@@ -20,6 +22,32 @@ namespace PMA.Services.Product.API.Moldes.Repository
         {
             _dbContext = dbContext;
             _mapper = mapper;
+        }
+
+        public async Task<ProductDto> CreateOrUpdate(ProductDto dto)
+        {
+            var product = _mapper.Map<ProductDto, Product>(dto);
+            _ = product.Id > 0 ? _dbContext.Products.Update(product) : await _dbContext.Products.AddAsync(product);
+            await _dbContext.SaveChangesAsync();
+            return _mapper.Map<Product, ProductDto>(product);
+        }
+
+        public async Task<bool> DeleteProduct(int id)
+        {
+            try
+            {
+                var product = await _dbContext.Products.FirstOrDefaultAsync(x => x.Id == id);
+
+                if (product == null) return false;
+
+                _dbContext.Products.Remove(product);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public async Task<IEnumerable<ProductDto>> GetAsync()

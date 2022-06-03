@@ -4,7 +4,6 @@ namespace PMA.Services.Product.API.Moldes
 {
     public class Product : BaseEntity
     {
-        [Required]
         public string Name { get; set; }
 
         public double Price { get; set; }
