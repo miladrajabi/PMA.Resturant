@@ -10,6 +10,7 @@
             POST,
             PUT,
             DELETE,
+            PATCH
         }
     }
 }
