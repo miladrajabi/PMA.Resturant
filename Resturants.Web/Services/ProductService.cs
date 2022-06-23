@@ -7,7 +7,7 @@ namespace Resturants.Web.Services
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        private const string apiCurl = "/api/Product";
+        private const string apiCurl = "/api/Product/";
 
         public ProductService(IHttpClientFactory httpClient) : base(httpClient)
         {
@@ -20,9 +20,7 @@ namespace Resturants.Web.Services
             {
                 AccessToken = String.Empty,
                 ApiType = SD.ApiType.DELETE,
-                Url = SD.ProductAPIBase + apiCurl,
-                Data = id
-
+                Url = SD.ProductAPIBase + apiCurl + id
             });
         }
 
@@ -42,8 +40,7 @@ namespace Resturants.Web.Services
             {
                 AccessToken = String.Empty,
                 ApiType = SD.ApiType.GET,
-                Url = SD.ProductAPIBase + apiCurl,
-                Data = id
+                Url = SD.ProductAPIBase + apiCurl + id,
             });
         }
 
