@@ -6,7 +6,7 @@ namespace Resturants.Web.Services.IServices
     {
          ResponseApiDto responseModel { get; set; }
 
-        Task<T> SendASync<T>(ApiRequest apiRequest);
+        Task<T> SendAsync<T>(ApiRequest apiRequest);
 
     }
 }
