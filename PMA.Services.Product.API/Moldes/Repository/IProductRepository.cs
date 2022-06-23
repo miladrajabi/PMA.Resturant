@@ -45,8 +45,7 @@ namespace PMA.Services.Product.API.Moldes.Repository
                 if (product == null) return false;
 
                 _dbContext.Products.Remove(product);
-                await _dbContext.SaveChangesAsync();
-                return true;
+                return await _dbContext.SaveChangesAsync() > 0;
             }
             catch (Exception)
             {

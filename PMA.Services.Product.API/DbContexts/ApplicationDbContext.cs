@@ -9,5 +9,31 @@ namespace PMA.Services.Product.API.DbContexts
 
         }
         public DbSet<Product.API.Moldes.Product> Products {get;set;}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Product.API.Moldes.Product>().HasData(new Moldes.Product
+            {
+                Id=1,
+                Name="Samosa",
+                Price=15,
+                Description="This is my product",
+                ImageUrl="",
+                CategoryName="Appetizer"
+            });
+
+            modelBuilder.Entity<Product.API.Moldes.Product>().HasData(new Moldes.Product
+            {
+                Id = 2,
+                Name = "Iphone",
+                Price = 150,
+                Description = "This is my product",
+                ImageUrl = "",
+                CategoryName = "Mobile"
+            });
+
+        }
     }
 }

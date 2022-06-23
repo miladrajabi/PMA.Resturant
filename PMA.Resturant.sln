@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{6C40BD36-50C4-44C2-A010-34BA5F01C753}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturant.Web", "Resturant.Web\Resturant.Web.csproj", "{3FB046D1-C804-42B9-8FFE-9FCAFA3D284F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F152A6E6-7276-4DAE-8303-465764D11545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMA.Services.Product.API", "PMA.Services.Product.API\PMA.Services.Product.API.csproj", "{94F88559-E436-4EFC-AC81-1C87F89188E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMA.Services.Product.API", "PMA.Services.Product.API\PMA.Services.Product.API.csproj", "{94F88559-E436-4EFC-AC81-1C87F89188E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "front", "front", "{2AA986AC-8658-47FC-B9CB-B88A5135A2DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturants.Web", "Resturants.Web\Resturants.Web.csproj", "{DDFBE668-F757-4672-9232-7F33D3B8ABE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,21 +17,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3FB046D1-C804-42B9-8FFE-9FCAFA3D284F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FB046D1-C804-42B9-8FFE-9FCAFA3D284F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FB046D1-C804-42B9-8FFE-9FCAFA3D284F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FB046D1-C804-42B9-8FFE-9FCAFA3D284F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{94F88559-E436-4EFC-AC81-1C87F89188E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94F88559-E436-4EFC-AC81-1C87F89188E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94F88559-E436-4EFC-AC81-1C87F89188E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94F88559-E436-4EFC-AC81-1C87F89188E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDFBE668-F757-4672-9232-7F33D3B8ABE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFBE668-F757-4672-9232-7F33D3B8ABE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFBE668-F757-4672-9232-7F33D3B8ABE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFBE668-F757-4672-9232-7F33D3B8ABE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3FB046D1-C804-42B9-8FFE-9FCAFA3D284F} = {6C40BD36-50C4-44C2-A010-34BA5F01C753}
 		{94F88559-E436-4EFC-AC81-1C87F89188E3} = {F152A6E6-7276-4DAE-8303-465764D11545}
+		{DDFBE668-F757-4672-9232-7F33D3B8ABE4} = {2AA986AC-8658-47FC-B9CB-B88A5135A2DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF4BDC92-B62A-4377-9409-BB6B8C030AFB}
