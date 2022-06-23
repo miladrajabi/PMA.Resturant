@@ -8,13 +8,13 @@ namespace Resturants.Web.Services
 {
     public class BaseService : IBaseService
     {
-        public ResponseApiDto responseModel { get; set; }
+        public ResponseApiData responseModel { get; set; }
         public IHttpClientFactory httpClient { get; set; }
 
         public BaseService(IHttpClientFactory httpClient)
         {
             this.httpClient = httpClient;
-            responseModel = new ResponseApiDto();
+            responseModel = new ResponseApiData();
         }
 
         public async Task<T> SendAsync<T>(ApiRequest apiRequest)
@@ -47,7 +47,7 @@ namespace Resturants.Web.Services
             }
             catch (Exception e)
             {
-                var dto = new ResponseApiDto
+                var dto = new ResponseApiData
                 {
                     DisplayMessage = "Error",
                     ErrorMessage = new List<string> { e.Message },

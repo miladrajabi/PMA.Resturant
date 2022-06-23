@@ -16,7 +16,7 @@ namespace PMA.Services.Product.API.DbContexts
 
             modelBuilder.Entity<Product.API.Moldes.Product>().HasData(new Moldes.Product
             {
-                Id=1,
+                Id=10,
                 Name="Samosa",
                 Price=15,
                 Description="This is my product",
@@ -26,7 +26,7 @@ namespace PMA.Services.Product.API.DbContexts
 
             modelBuilder.Entity<Product.API.Moldes.Product>().HasData(new Moldes.Product
             {
-                Id = 2,
+                Id = 11,
                 Name = "Iphone",
                 Price = 150,
                 Description = "This is my product",

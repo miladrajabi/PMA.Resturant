@@ -1,6 +1,6 @@
 ﻿namespace Resturants.Web.Models
 {
-    public class ResponseApiDto
+    public class ResponseApiData
     {
         public bool IsSuccess { get; set; } = true;
         public object Result { get; set; }
