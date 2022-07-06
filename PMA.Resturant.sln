@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMA.Services.Product.API", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "front", "front", "{2AA986AC-8658-47FC-B9CB-B88A5135A2DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturants.Web", "Resturants.Web\Resturants.Web.csproj", "{DDFBE668-F757-4672-9232-7F33D3B8ABE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resturants.Web", "Resturants.Web\Resturants.Web.csproj", "{DDFBE668-F757-4672-9232-7F33D3B8ABE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturants.Services.Identity", "Resturants.Services.Identity\Resturants.Services.Identity.csproj", "{8774F6E3-C128-4BE7-866E-43B21896A58F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{DDFBE668-F757-4672-9232-7F33D3B8ABE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDFBE668-F757-4672-9232-7F33D3B8ABE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDFBE668-F757-4672-9232-7F33D3B8ABE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8774F6E3-C128-4BE7-866E-43B21896A58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8774F6E3-C128-4BE7-866E-43B21896A58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8774F6E3-C128-4BE7-866E-43B21896A58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8774F6E3-C128-4BE7-866E-43B21896A58F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{94F88559-E436-4EFC-AC81-1C87F89188E3} = {F152A6E6-7276-4DAE-8303-465764D11545}
 		{DDFBE668-F757-4672-9232-7F33D3B8ABE4} = {2AA986AC-8658-47FC-B9CB-B88A5135A2DE}
+		{8774F6E3-C128-4BE7-866E-43B21896A58F} = {F152A6E6-7276-4DAE-8303-465764D11545}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF4BDC92-B62A-4377-9409-BB6B8C030AFB}
